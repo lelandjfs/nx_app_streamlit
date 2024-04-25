@@ -1,4 +1,10 @@
 import streamlit as st
 
-st.write("hello world")
-st.write("test2")
+st.title("AI Developer Network Map")
+
+
+# Display the summary field
+summary_placeholder = st.empty()
+
+# Create a file uploader widget
+uploaded_file = st.file_uploader("Choose a file")
