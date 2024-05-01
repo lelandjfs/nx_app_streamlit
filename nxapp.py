@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+import logging
 
 st.title("AI Developer Network Map")
 
@@ -41,13 +43,9 @@ upload_button = st.button('Submit')
 
 
 def main():
-    # File uploader widget. This would typically be at the top level of your Streamlit app.
-    uploaded_file = st.file_uploader("Choose a CSV file")
-    # Submit button to trigger the processing
-    submit_button = st.button('Submit')
 
     # Check if the submit button is pressed
-    if submit_button:
+    if upload_button:
         # Check if the file is uploaded
         if uploaded_file is not None:
             try:
@@ -84,14 +82,14 @@ def process_csv(uploaded_file):
         store_data_someplace(data)
 
     except Exception as e:
-        logging.error(f"Error processing the CSV file: {e}")
+     #   logging.error(f"Error processing the CSV file: {e}")
         raise
 
 def store_data_someplace(data):
     # Replace the placeholder string with the actual file path where you want to save the data
-    file_path = 'path/to/your/file/location.csv'
+    file_path = (r'C:\Users\lelan\OneDrive\Documents\MySQL\Projects\Streamlit\Linkedin\Database\Database_Parsed_CSVs\logging.csv')
     data.to_csv(file_path, index=False)
-    logging.info(f"Data saved successfully to {file_path}")
+    #logging.info(f"Data saved successfully to {file_path}")
 
 if __name__ == "__main__":
     main()
