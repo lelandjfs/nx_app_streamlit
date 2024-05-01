@@ -31,6 +31,8 @@ st.write("")
 
 # Create a file uploader widget
 uploaded_file = st.file_uploader("Choose a file")
+# submit button
+upload_button = st.button('Submit')
 
 
 # next steps: need a function that parses through the downloads + saves + appends their linkedin onto data
