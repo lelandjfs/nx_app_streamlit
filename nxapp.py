@@ -61,8 +61,8 @@ def main():
 
 def process_csv(uploaded_file):
     # Set up basic logging will need to pip and import
-    #logging.basicConfig(level=logging.ERROR, filename='processing_errors.log', filemode='a',
-    #                    format='%(asctime)s - %(levelname)s - %(message)s')
+    logging.basicConfig(level=logging.ERROR, filename='processing_errors.log', filemode='a',
+                        format='%(asctime)s - %(levelname)s - %(message)s')
 
     expected_columns = ['First Name', 'Last Name', 'URL', 'Email Address', 'Company', 'Position', 'Connected On']
     new_column_names = ['first_name', 'last_name', 'url', 'email_address', 'company', 'position', 'connected_date']
@@ -82,14 +82,14 @@ def process_csv(uploaded_file):
         store_data_someplace(data)
 
     except Exception as e:
-     #   logging.error(f"Error processing the CSV file: {e}")
+        logging.error(f"Error processing the CSV file: {e}")
         raise
 
 def store_data_someplace(data):
     # Replace the placeholder string with the actual file path where you want to save the data
     file_path = (r'C:\Users\lelan\OneDrive\Documents\MySQL\Projects\Streamlit\Linkedin\Database\Database_Parsed_CSVs\logging.csv')
     data.to_csv(file_path, index=False)
-    #logging.info(f"Data saved successfully to {file_path}")
+    logging.info(f"Data saved successfully to {file_path}")
 
 if __name__ == "__main__":
     main()
