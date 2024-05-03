@@ -1,14 +1,16 @@
 import streamlit as st
 import pandas as pd
 import logging
+import mysql.connector
+
 
 mydb = mysql.connector.connect(
     host="localhost",
-    user="root",
-    password="Leestores27!",
+    port = 3306,
+    user="userLee1",
+    password="Beamteam27!",
     database="linkedin_downloads"
 )
-
 
 
 st.title("AI Developer Network Map")
