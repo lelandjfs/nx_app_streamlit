@@ -5,9 +5,9 @@ import pymongo
 from datetime import datetime
 
 # MongoDB connection
-client = pymongo.MongoClient("mongodb://localhost:27017/")
-db = client["linkedin_downloads"]
-collection = db["contacts"]
+client = pymongo.MongoClient("mongodb+srv://<username>:<password>@<cluster-url>/linkedin_downloads?retryWrites=true&w=majority")
+db = client["linkedin"]
+collection = db["connections-upload-streamlit"]
 
 st.title("AI Developer Network Map")
 
