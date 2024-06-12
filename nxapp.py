@@ -14,7 +14,7 @@ password = os.getenv("MONGODB_PASSWORD")
 cluster_url = os.getenv("MONGODB_CLUSTER_URL")
 
 # MongoDB connection
-client = pymongo.MongoClient("mongodb+srv://<username>:<password>@<cluster-url>/?retryWrites=true&w=majority&appName=staging-lnkdn-raw")
+client = pymongo.MongoClient(f"mongodb+srv://{username}:{password}@{cluster_url}/?retryWrites=true&w=majority&appName=staging-lnkdn-raw")
 
 db = client["linkedin"]
 collection = db["connections-upload-streamlit"]
