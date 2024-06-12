@@ -3,9 +3,18 @@ import pandas as pd
 import logging
 import pymongo
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+username = os.getenv("MONGODB_USER")
+password = os.getenv("MONGODB_PASSWORD")
+cluster_url = os.getenv("MONGODB_CLUSTER_URL")
 
 # MongoDB connection
-client = pymongo.MongoClient("mongodb+srv://<username>:<password>@<cluster-url>/linkedin_downloads?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://<username>:<password>@<cluster-url>/?retryWrites=true&w=majority&appName=staging-lnkdn-raw")
+
 db = client["linkedin"]
 collection = db["connections-upload-streamlit"]
 
